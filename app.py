@@ -48,7 +48,7 @@ def main(page: ft.Page):
 def get_github_public_repositories():
     username = "vesteves33"
     url = f"https://api.github.com/users/{username}/repos"
-    token = "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"
+    token = ""
     header = {"Authorization": f"token {token}"}
     response = requests.get(url, headers=header)
     list_repositories = []
