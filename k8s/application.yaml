@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devfinops-flet-app
+  namespace: argocd # O namespace onde o Argo CD está instalado
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/vesteves33/devfinops-flet-app.git # Substitua pela URL do seu repo
+    targetRevision: HEAD
+    path: k8s # O diretório no seu repo com os manifests Kubernetes
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: devfinops # O namespace onde queremos deployar
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true # Se o namespace não existir, cria

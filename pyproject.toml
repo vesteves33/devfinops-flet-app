@@ -1,0 +1,17 @@
+[project]
+name = "devfinops"
+version = "0.1.0"
+description = "Projeto desenvolvido pelos membros da comunidade FinOps pensando em automação de tarefas, novas funcionalidades e afins"
+authors = [
+    {name = "Vitor Esteves"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "flet (>=0.27.6,<0.28.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

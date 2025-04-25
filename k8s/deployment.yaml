@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devfinops-flet-app-deployment
+  namespace: devfinops
+spec:
+  replicas: 3  # Número desejado de réplicas da nossa aplicação
+  selector:
+    matchLabels:
+      app: devfinops-flet-app
+  template:
+    metadata:
+      labels:
+        app: devfinops-flet-app
+    spec:
+      containers:
+        - name: devfinops-flet-app-container
+          image: vesteves33/devfinops-flet-app:latest
+          ports:
+            - containerPort: 8080  # Porta em que sua aplicação Flet escuta
